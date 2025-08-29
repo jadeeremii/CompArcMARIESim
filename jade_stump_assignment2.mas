@@ -1,0 +1,65 @@
+/Jade Stump
+/CGS 3269
+/Assignment 2
+
+Input
+    Store   A   /Reading and storing first number
+    Input
+    Store   B   /Reading and storing second number
+    Input
+    Store   C   /Reading and storing third number
+    Load    B
+    Store   Count
+
+Checking, Load A
+		Subt Zero 
+        Skipcond 800
+        Jump Neg /Jump to Neg to output zero if A is negative
+        Load B
+        Subt Zero
+        Skipcond 800
+        Jump Neg /Jump to Neg to output zero if B is negative
+        Load C
+        Subt Zero
+        Skipcond 800
+        Jump Neg /Jump to Neg to output zero if C is negative
+Loop1,  Load    A
+    Add     Sum1
+    Store   Sum1
+    Load    Count
+    Subt    One
+    Store   Count
+    Skipcond 800 
+    Jump    Count2 /If count becomes zero, Jump to Count2 
+    Jump    Loop1 /If count is not zero, Jump to Loop1 again
+
+Count2, Load    C
+    Store   Count
+
+Loop2,  Load    Sum1
+    Add     Sum2
+    Store   Sum2
+    Load    Count
+    Subt    One
+    Store   Count
+    Skipcond 800
+    Jump    End  /If count becomes zero, Jump to End, to output result and halt
+    Jump    Loop2  /If count is not zero, Jump to Loop2
+    
+Neg, Load Zero
+	 Output /Output zero if any number is negative and halt
+	 Halt
+     
+End,    Load    Sum2
+    Output /If no number is negative output the product and halt
+    Halt
+
+/ Declaration and initializations
+A,  Dec 0
+B,  Dec 0
+C,  Dec 0
+Sum1,   Dec 0
+Sum2,   Dec 0
+Count,  Dec 0
+One,    Dec 1
+Zero,   Dec 0
