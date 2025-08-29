@@ -1,0 +1,49 @@
+/Jade Stump Assignment 1
+
+Input /setting inputs
+Store A
+Input
+Store B
+Input
+Store C
+
+Load B 	/set count for b times
+Store Count
+
+Loop1, Load A
+Add temp /temporary variable
+Output
+Store temp
+
+Load Count
+Subt One
+Store Count
+Skipcond 800
+Jump Count2
+Jump Loop1
+
+Count2, Load C
+Store Count /set count for c times
+
+Loop2, Load temp
+Add z
+Store z 	/final z is product
+Output
+Load Count
+Subt One
+Store Count
+Skipcond 800
+Jump End
+Jump Loop2
+
+End, Load z
+Output
+Halt
+
+A, Dec 0
+B, Dec 0
+C, Dec 0
+temp, Dec 0
+z, Dec 0
+Count, Dec 0
+One, Dec 1
